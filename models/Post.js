@@ -20,12 +20,7 @@ class Post extends Model {}
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-    },
-    dateCreated: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+    },    
     userId: {
       type: DataTypes.INTEGER,
       //Foreign key to User.id
@@ -37,7 +32,7 @@ class Post extends Model {}
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'post',
