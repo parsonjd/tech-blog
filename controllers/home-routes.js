@@ -36,7 +36,8 @@ router.get('/post/:id', withAuth, async (req, res) => {
   
       if (postData) {
         
-        const post = postData.get({ plain: true });      
+        const post = postData.get({ plain: true }); 
+        console.log(post)     
         res.render('postByID', { post, loggedIn: req.session.loggedIn});
       } else {
         res.status(404).end();
@@ -46,7 +47,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     }
   });
 
-//Route to login or signup page if not logged in on homepage
+//Route to login or signup page 
 router.get('/login', (req, res) => {     
     res.render('login');
   });

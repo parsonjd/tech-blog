@@ -16,9 +16,12 @@
       <nav>
         <ul class="navbar">
               <li><a class="link" href="/">Home</a></li>
-               <li><a class="link" href="/dashboard">Dashboard</a></li>              
-               <li><a class="link" href="/" id="logout">Logout</a></li>              
-               <li><a class="link" href="/login">Login</a></li>              
+               <li><a class="link" href="/dashboard">Dashboard</a></li>  
+               {{#if loggedIn}}            
+               <li><a class="link" href="/" id="logout">Logout</a></li> 
+               {{else}}             
+               <li><a class="link" href="/login">Login</a></li>      
+               {{/if}}        
         </ul>
       </nav>    
 </header>
@@ -28,9 +31,10 @@
 </main>
 
    
-    
+    {{#if loggedIn}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" ></script>
-    
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </div>
 </body>
 
