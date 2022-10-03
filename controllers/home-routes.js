@@ -23,22 +23,29 @@ router.get('/post/:id', withAuth, async (req, res) => {
     try {
       
       const postData = await Post.findOne({
+        where: {
+            id: req.params.id
+        },
         
-        where: {id: req.params.id},
-        include: [
-          User,
-          {
-            model: Comment,
-            include: [User],
-          },
-        ],
-      });
+        include: [{
+                model: Comment,                
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
   
       if (postData) {
         
         const post = postData.get({ plain: true }); 
         console.log(post)     
-        res.render('postByID', { post, loggedIn: req.session.loggedIn});
+        res.render('post-by-id', { post, loggedIn: req.session.loggedIn});
       } else {
         res.status(404).end();
       }
@@ -52,10 +59,7 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
-router.get('/signup', (req, res) => {    
-    res.render('signup');
-  });
-   
+
  
   
   module.exports = router;

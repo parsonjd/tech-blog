@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
   }
+  body {
+    background-color: bisque;
+  }
   
   header, .project:not(:last-child) {
     border-bottom: 1px solid #ccc;
@@ -25,16 +28,18 @@
   .no-button:hover {
     color: #065b83;
     text-decoration: underline;
+  }  
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
   }
   
-  .title:link{
+  .title:visited{    
     color: black;
-    text-decoration: none;
-  }
-  
-  .title:visited{
-    color: black;
-    text-decoration: none;
+    text-decoration: none; 
+    
   }
   
   .title:hover{
@@ -46,7 +51,7 @@
   
   .navbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     position: relative;
     list-style-type: none;
     margin: 0;
@@ -57,17 +62,12 @@
   .navbar a{
     text-decoration: none;
     margin: 0 5px
-  }
-  
-  .navbar a:visited{
-    text-decoration: none;
-    color: inherit;
-  }
+  }     
   
   .navbar a:hover{
     text-decoration: none;
-    color: inherit;
-  }
+    color: rgb(0, 0, 12);
+  } 
   
   .post{
     margin: 20px 0;
@@ -115,8 +115,33 @@
   
   .post-username{
     font-weight: bold;
-  }   
+  }  
 
+  .comments{
+    margin-top: 20px;
+    padding: 10px;
+    border: 3px #d3d3d3 solid;
+    border-radius: 10px;
+  }
+  
+  .comment-button{
+    margin-top: 20px;
+  }
+
+  .comment-list {
+    text-align: center;
+  }
+  
+  .comment-text{
+    padding: 10px;
+  }
+  
+  .comment-author{
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+ 
   .card-body{
     color: rgb(44, 11, 134);
     padding: 15px;
@@ -148,4 +173,8 @@
   .new-post-button{
     margin: 20px 0;
   }
-  
+
+  .container {
+    display: inline-block;
+    
+  }
