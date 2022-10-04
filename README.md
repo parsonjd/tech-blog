@@ -23,6 +23,12 @@ Clone the repo to your computer and run npm install from the root directory. Mak
 
 Run nodemon server to connect to the database and start the server. The site is user friendly and easy to navigate.
 
+[![tech-blog1.png](https://i.postimg.cc/sDWG5sh6/tech-blog1.png)](https://postimg.cc/crsJSqTw)
+
+[![tech-blog2.png](https://i.postimg.cc/G3Gy6vL3/tech-blog2.png)](https://postimg.cc/QVNCT9Kv)
+
+[![tech-blog3.png](https://i.postimg.cc/x1cTVSvG/tech-blog3.png)](https://postimg.cc/tsGHFwm7)
+
 ## License
 
     This application is covered by the APACHE license.
