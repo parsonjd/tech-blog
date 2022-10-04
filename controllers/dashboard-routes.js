@@ -11,13 +11,16 @@ router.get('/', withAuth, async (req, res) => {
         user_id: req.session.user_id
     },
     include: [{
-        model: Comment,
-        
-        include: {
-            model: User,
-           
-        }
-    },   
+      model: Comment,                
+      include: {
+          model: User,
+          attributes: ['username']
+      }
+  },
+  {
+      model: User,
+      attributes: ['username']
+  }
 ]
 })   
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -34,24 +37,21 @@ router.get('/new', (req, res) => {
   res.render('new-post');
 });
 
-// WHEN WE CLICK ON THE POST ITSELF
-// router.get('/edit/:id', withAuth, async (req, res) => {
-//   try {    
-//     const postData = await Post.findByPk(req.params.id);
 
-//     if (postData) {      
-//       const post = postData.get({ plain: true });        
-//       res.render('edit-post', {
-//         layout: 'dashboard',
-//         post,
-//       });
-//     } else {
-//       res.status(404).end();
-//     }
-//   } catch (err) {
-//     res.redirect('login');
-//   }
-// });
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {    
+    const postData = await Post.findByPk(req.params.id);
+
+    if (postData) {      
+      const post = postData.get({ plain: true });        
+      res.render('edit-post', { post });
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.redirect('login');
+  }
+});
 
 module.exports = router;
 

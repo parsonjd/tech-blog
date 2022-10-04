@@ -172,9 +172,14 @@
  
   .new-post-button{
     margin: 20px 0;
+    color: white;
   }
 
   .container {
     display: inline-block;
     
+  }
+
+  .form-label {
+    display: inline-block;
   }
