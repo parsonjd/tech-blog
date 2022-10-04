@@ -21,7 +21,7 @@ Clone the repo to your computer and run npm install from the root directory. Mak
 
 ## Usage
 
-Run nodemon server to connect to the database and start the server. The site is user friendly and easy to navigate.
+Run nodemon server to connect to the database and start the server. The site is user friendly and easy to navigate.  Click here for link to deployed application: [tech-blog] (https://tech-blog-jdp.herokuapp.com/)
 
 [![tech-blog1.png](https://i.postimg.cc/sDWG5sh6/tech-blog1.png)](https://postimg.cc/crsJSqTw)
 
